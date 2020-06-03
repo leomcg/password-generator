@@ -8,18 +8,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   password = '';
   length = 0;
-  includeLetters = false;
+  includeLowercase = false;
+  includeUppercase = false;
   includeNumbers = false;
   includeSymbols = false;
 
   onButtonClick() {
     const numbers = '123456789';
-    const letters = 'abcdefghijlmnopqrstuwvxyz';
+    const lowercase = 'abcdefghijlmnopqrstuwvxyz';
+    const uppercase = 'ABCDEFGHIJLMNOPQRSTUVXZWY';
     const symbols = '!@#$%&*-+?';
 
     let validChars = '';
-    if (this.includeLetters) {
-      validChars += letters;
+    if (this.includeLowercase) {
+      validChars += lowercase;
+    }
+    if(this.includeUppercase) {
+      validChars += uppercase;
     }
     if (this.includeNumbers) {
       validChars += numbers;
@@ -45,11 +50,15 @@ export class AppComponent {
     }
   }
 
-  onChangeUseLetters() {
-    this.includeLetters = !this.includeLetters;
+  onChangeUseUppercase() {
+    this.includeUppercase = !this.includeUppercase;
   }
 
-  onChangeUseNumber() {
+  onChangeUseLowercase() {
+    this.includeLowercase = !this.includeLowercase;
+  }
+
+  onChangeUseNumbers() {
     this.includeNumbers = !this.includeNumbers;
   }
 
