@@ -8,3 +8,5 @@ Select how your password will be:
 * Letters?
 * Symbols?
 * Uppercases?
+
+# Angular + Bulma css
